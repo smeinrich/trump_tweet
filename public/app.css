@@ -1,0 +1,45 @@
+body {
+    text-align: center;
+    background: #141E30;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #243B55, #141E30);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    font-family: 'Open Sans', sans-serif;
+    color: white;
+    padding: 10px 50px;
+}
+
+h1 {
+    margin: 20px auto;
+}
+
+h2 {
+    font-family: 'Rammetto One', cursive;
+    font-size: 700%;
+    /*margin: 50px auto 80px auto;*/
+}
+
+p {
+    /*font-size: 1.7em;*/
+    display: inline-block;
+}
+
+#tweet {
+    border-radius: 25px;
+	padding: 20px;
+	margin-top: 60px;
+    background: rgba(0, 0, 0, 0.5);
+	box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+	font-size: 200%;
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 25px;
+	padding: 20px;
+}
+
+.img-wrapper {
+    max-width: 50%;
+}

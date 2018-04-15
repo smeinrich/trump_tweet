@@ -1,0 +1,19 @@
+{
+  "name": "trumptweet",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^2.5.7",
+    "express": "^4.16.2",
+    "request": "^2.83.0",
+    "time-ago": "^0.2.1",
+    "time_ago_in_words": "^1.2.1",
+    "twitter": "^1.7.1"
+  }
+}
