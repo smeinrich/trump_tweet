@@ -1,19 +1,32 @@
 <% include partials/header %>
 
-<div class="container-fluid">
-    <div class="row">
-         <div class="col-sm-12">
-            <h1>When did President Trump last tweet something?</h1>   
-            <h2><%= timeSince %></h2>
+<div class="ui two column stackable centered grid container">
+    <div class="column">
+        <div class="ui basic segment">
+            <div class="ui huge centered header">When did President Trump last tweet something?</div>
         </div>
     </div>
-    <div class="row">
-        <div class="col-sm-12 col-lg-4">
-            <img class="img-responsive img-fluid max-width:100%" src="<%= trumpImg %>">
+</div>
+<div class="ui two column stackable centered grid container">
+    <div class="column">
+        <div class="ui raised segment">
+            <div class="ui items">
+                <div class="item">
+                    <div class="image">
+                        <img src="<%= trumpImg %>">
+                    </div>
+                    <div class="content">
+                        <a class="header"><%= timeSince %></a>
+                            <div class="meta">
+                                <span>Trump tweeted:</span>
+                            </div>
+                        <div class="description">
+                            <p><%= tweet %></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="col-sm-12 col-lg-8">
-            <p id="tweet"> <i class="fas fa-quote-left fa-pull-left"></i> <%= tweet %> <i class="fas fa-quote-right fa-pull-right"></i></p>
-        </div>        
     </div>
 </div>
 
