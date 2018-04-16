@@ -28,7 +28,7 @@ app.get("/", function(req, res){
         } else if(tweetLowerCase.includes("looking forward") == true || tweetLowerCase.includes("foxandfriends") == true){
           trumpImg = "images/deal.png";
         } else {
-          trumpImg = "images/1f60f.svg";
+          trumpImg = "images/anger.png";
         }
         res.render("landing", {timeSince: timeSince, tweet: tweet, trumpImg: trumpImg});
       }
