@@ -15,22 +15,30 @@ var client = new Twitter({
 });
 
 app.get("/", function(req, res){
-    var params = {screen_name: 'realDonaldTrump', tweet_mode: 'extended', count: 1};
+    var params = {screen_name: 'realDonaldTrump', tweet_mode: 'extended', count: 5};
     client.get('statuses/user_timeline', params, function(error, tweets, response) {
       if (!error) {
-        var tweet = tweets[0]["full_text"];
-        var tweetLowerCase = tweet.toLowerCase();
-        var tweetTime = tweets[0]["created_at"];
-        var timeSince = ta.ago(tweetTime);
-        var trumpImg = "";
-        if(tweetLowerCase.includes("fake news") == true || tweetLowerCase.includes("witch hunt") == true || tweetLowerCase.includes("democrats") == true) {
-          trumpImg = "images/anger.png";
-        } else if(tweetLowerCase.includes("looking forward") == true || tweetLowerCase.includes("foxandfriends") == true){
-          trumpImg = "images/deal.png";
-        } else {
-          trumpImg = "images/anger.png";
-        }
-        res.render("landing", {timeSince: timeSince, tweet: tweet, trumpImg: trumpImg});
+        var tweet = [tweets[0]["full_text"], tweets[1]["full_text"], tweets[2]["full_text"], tweets[3]["full_text"], tweets[4]["full_text"]];
+        var tweetTime = [tweets[0]["created_at"], tweets[1]["created_at"], tweets[2]["created_at"], tweets[3]["created_at"], tweets[4]["created_at"]];
+        var timeSince = [ta.ago(tweetTime[0]), ta.ago(tweetTime[1]), ta.ago(tweetTime[2]), ta.ago(tweetTime[3]), ta.ago(tweetTime[4])];
+        var trumpImg = "images/anger.png";
+        res.render("landing", {
+          timeSince1: timeSince[0], timeSince2: timeSince[1], timeSince3: timeSince[2], timeSince4: timeSince[3], timeSince5: timeSince[4], 
+          tweet1: tweet[0], tweet2: tweet[1], tweet3: tweet[2], tweet4: tweet[3], tweet5: tweet[4],
+          trumpImg: trumpImg
+        });
+
+
+
+        // var tweetLowerCase = tweet.toLowerCase();
+        // if(tweetLowerCase.includes("fake news") == true || tweetLowerCase.includes("witch hunt") == true || tweetLowerCase.includes("democrats") == true) {
+        //   trumpImg = "images/anger.png";
+        // } else if(tweetLowerCase.includes("looking forward") == true || tweetLowerCase.includes("foxandfriends") == true){
+        //   trumpImg = "images/deal.png";
+        // } else {
+        //   trumpImg = "images/anger.png";
+        // }
+        // res.render("landing", {timeSince: timeSince, tweet: tweet, trumpImg: trumpImg});
       }
     });
 });
